@@ -15,7 +15,7 @@ int main() {
   Metacarpal::Producer p;
 
   p.test("sum");
-  p.equal(1 + 1, 2, "1 plus 1 should be 2");
+  p.equal(1 + 1, 2, "one plus one should be 2");
 
   p.test("logic");
   p.ok(true && true, "true and true should be truthy");
@@ -24,8 +24,31 @@ int main() {
   else
     p.fail("or isn't working");
 
+	p.test("failing");
+	p.equal("this string should be", "that");
+
   return p.end();
 }
+```
+
+## Example output
+```
+# sum
+ok 1 1 plus 1 should be 2
+# logic
+ok 2 true and true should be truthy
+ok 3 or is working
+# failing
+not ok 4 
+  ---
+    operator:   equal
+    expected:   that
+    actual:     this string should be
+  ...
+1..4
+# tests 4
+# pass 3
+# fail 1
 ```
 
 ## API
