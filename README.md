@@ -54,32 +54,32 @@ not ok 4
 
 ## API
 
-### void test(std::string name)
+### test(string name)
 
 Create a new test
 
 - @param name - test name
 
-### void pass(std::string message = "")
+### pass(string message)
 
 Generate a passing assertion with an optional message
 
 - @param message - optional message
 
-### void fail(std::string message = "")
+### fail(string message)
 
 Generate a failing assertion with an optional message
 
 - @param message - optional message
 
-### void ok(bool value, std::string message = "")
+### ok(bool value, string message)
 
 Assert that value is truthy with an optional description message
 
 - @param value - value to be asserted
 - @param message - optional description message
 
-### void equal(T value, T expected, std::string message = "")
+### equal(T value, T expected, string message)
 
 Assert that both values are equal with an optional description message
 
@@ -87,7 +87,7 @@ Assert that both values are equal with an optional description message
 - @param expected - expected value
 - @param message - optional description message
 
-### int end()
+### end()
 
 Declare the end of the tests, finalizing the producer's output
 
