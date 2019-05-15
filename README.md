@@ -24,14 +24,15 @@ int main() {
   else
     p.fail("or isn't working");
 
-	p.test("failing");
-	p.equal("this string should be", "that");
+  p.test("failing");
+  p.equal("this string should be", "that");
 
   return p.end();
 }
 ```
 
 ## Example output
+
 ```
 # sum
 ok 1 1 plus 1 should be 2
@@ -39,7 +40,7 @@ ok 1 1 plus 1 should be 2
 ok 2 true and true should be truthy
 ok 3 or is working
 # failing
-not ok 4 
+not ok 4
   ---
     operator:   equal
     expected:   that
