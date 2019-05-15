@@ -18,14 +18,14 @@ class Producer {
    *
    * @param name - test name
    */
-  void test(std::string name) { std::cout << "# " << name << std::endl; }
+  void test(const std::string& name) { std::cout << "# " << name << std::endl; }
 
   /**
    * Generate a passing assertion with an optional message
    *
    * @param message - optional message
    */
-  void pass(std::string message = "") {
+  void pass(const std::string& message = "") {
     this->count++;
     std::cout << "ok " << this->count << " " << message << std::endl;
   }
@@ -35,7 +35,7 @@ class Producer {
    *
    * @param message - optional message
    */
-  void fail(std::string message = "") {
+  void fail(const std::string& message = "") {
     this->failed++;
     std::cout << "not ";
     this->pass(message);
@@ -47,7 +47,7 @@ class Producer {
    * @param value - value to be asserted
    * @param message - optional description message
    */
-  void ok(bool value, std::string message = "") {
+  void ok(const bool value, const std::string& message = "") {
     if (value)
       this->pass(message);
     else
@@ -62,7 +62,7 @@ class Producer {
    * @param message - optional description message
    */
   template <class T>
-  void equal(T value, T expected, std::string message = "") {
+  void equal(const T value, const T expected, const std::string& message = "") {
     if (value == expected)
       this->pass(message);
     else {
