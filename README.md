@@ -63,7 +63,7 @@ Assert that both values are equal with an optional description message
 - @param expected - expected value
 - @param message - optional description message
 
-### int end() {
+### int end()
 
 Declare the end of the tests, finalizing the producer's output
 
