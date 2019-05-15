@@ -4,7 +4,8 @@ tap-producing test harness for cpp
 
 ## Installation
 
-To get started you need to download the latest version which is just a single header and include it in your test file.
+To get started you need to download the [latest version](https://raw.githubusercontent.com/huijari/metacarpal/master/producer.hpp)
+which is just a single header and include it in your test file.
 
 ## Example usage
 
