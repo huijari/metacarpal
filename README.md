@@ -57,42 +57,46 @@ not ok 4
 
 ### test(string name)
 
-Create a new test
-
 - @param name - test name
+
+Create a new test
 
 ### pass(string message)
 
-Generate a passing assertion with an optional message
-
 - @param message - optional message
+- @returns true
+
+Generate a passing assertion with an optional message
 
 ### fail(string message)
 
-Generate a failing assertion with an optional message
-
 - @param message - optional message
+- @returns false
+
+Generate a failing assertion with an optional message
 
 ### ok(bool value, string message)
 
-Assert that value is truthy with an optional description message
-
 - @param value - value to be asserted
 - @param message - optional description message
+- @returns true if ok
+
+Assert that value is truthy with an optional description message
 
 ### equal(T value, T expected, string message)
-
-Assert that both values are equal with an optional description message
 
 - @param value - actual value
 - @param expected - expected value
 - @param message - optional description message
+- @returns true if equal
+
+Assert that both values are equal with an optional description message
 
 ### end()
 
-Declare the end of the tests, finalizing the producer's output
-
 - @returns the number of failed tests capped at 254
+
+Declare the end of the tests, finalizing the producer's output
 
 ## Reporters
 

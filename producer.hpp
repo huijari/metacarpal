@@ -24,21 +24,25 @@ class Producer {
    * Generate a passing assertion with an optional message
    *
    * @param message - optional message
+   * @returns true
    */
-  void pass(const std::string& message = "") {
+  bool pass(const std::string& message = "") {
     this->count++;
     std::cout << "ok " << this->count << " " << message << std::endl;
+    return true;
   }
 
   /**
    * Generate a failing assertion with an optional message
    *
    * @param message - optional message
+   * @returns false
    */
-  void fail(const std::string& message = "") {
+  bool fail(const std::string& message = "") {
     this->failed++;
     std::cout << "not ";
     this->pass(message);
+    return false;
   }
 
   /**
@@ -46,12 +50,13 @@ class Producer {
    *
    * @param value - value to be asserted
    * @param message - optional description message
+   * @returns true if ok
    */
-  void ok(const bool value, const std::string& message = "") {
+  bool ok(const bool value, const std::string& message = "") {
     if (value)
-      this->pass(message);
+      return this->pass(message);
     else
-      this->fail(message);
+      return this->fail(message);
   }
 
   /**
@@ -60,19 +65,22 @@ class Producer {
    * @param value - actual value
    * @param expected - expected value
    * @param message - optional description message
+   * @returns true if equal
    */
   template <class T>
-  void equal(const T value, const T expected, const std::string& message = "") {
+  bool equal(const T value, const T expected, const std::string& message = "") {
+    bool result;
     if (value == expected)
-      this->pass(message);
+      result = this->pass(message);
     else {
-      this->fail(message);
+      result = this->fail(message);
       std::cout << "  ---" << std::endl;
       std::cout << "    operator:\tequal" << std::endl;
       std::cout << "    expected:\t" << expected << std::endl;
       std::cout << "    actual:\t" << value << std::endl;
       std::cout << "  ..." << std::endl;
     }
+    return result;
   }
 
   /**
