@@ -1,6 +1,8 @@
+![Logo of the project](https://raw.githubusercontent.com/huijari/metacarpal/master/logo.png)
+
 # metacarpal
 
-tap-producing test harness for cpp
+> tap-producing test harness for cpp
 
 ## Installation
 
