@@ -4,13 +4,13 @@ tap-producing test harness for cpp
 
 ## Installation
 
-To get started you need to download the [latest version](https://raw.githubusercontent.com/huijari/metacarpal/master/producer.hpp)
+To get started you need to download the [latest version](https://raw.githubusercontent.com/huijari/metacarpal/master/metacarpal.hpp)
 which is just a single header and include it in your test file.
 
 ## Example usage
 
 ```cpp
-#include <producer.hpp>
+#include <metacarpal.hpp>
 
 int main() {
   Metacarpal::Producer p;
@@ -52,6 +52,11 @@ not ok 4
 # pass 3
 # fail 1
 ```
+
+## Reporters
+
+The TAP output is somewhat good even for humans,
+but if you want a more colorful/pretty output there are lots of [custom reporters](https://github.com/sindresorhus/awesome-tap#reporters).
 
 ## API
 
@@ -97,11 +102,6 @@ Assert that both values are equal with an optional description message
 - @returns the number of failed tests capped at 254
 
 Declare the end of the tests, finalizing the producer's output
-
-## Reporters
-
-The TAP output is somewhat good even for humans,
-but if you want a more colorful/pretty output there are lots of [custom reporters](https://github.com/sindresorhus/awesome-tap#reporters).
 
 ## License
 
